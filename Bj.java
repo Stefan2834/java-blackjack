@@ -202,10 +202,10 @@ class Game {
             }
         } else if (dealerValue == 11) {
             if ((int) dealerSecondCard.get(1) == 10) {
-                showCards();
                 dealerValue += 10;
                 gameEnded = true;
                 dealerCards.add((String) dealerSecondCard.get(0));
+                showCards();
                 if (insurance) {
                     System.out.println("You've get the money back from the insurance");
                 }
