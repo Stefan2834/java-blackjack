@@ -164,12 +164,12 @@ class Game {
         while (dealerValue < 17) {
             List<Object> dealerNewCard = generateCard();
             dealerValue += (int) dealerNewCard.get(1);
+            if ((int) dealerNewCard.get(1) == 11) dealerAce++;
             if (dealerValue > 21 && dealerAce > 0) {
                 dealerValue -= 10;
                 dealerAce--;
             }
             dealerCards.add((String) dealerNewCard.get(0));
-            if ((int) dealerNewCard.get(1) == 1) dealerAce++;
         }
         showCards();
         if (dealerValue > 21) {
@@ -207,7 +207,7 @@ class Game {
                 dealerCards.add((String) dealerSecondCard.get(0));
                 showCards();
                 if (insurance) {
-                    System.out.println("You've get the money back from the insurance");
+                    System.out.println("You've got the money back from the insurance");
                 }
                 if (userValue == 21) {
                     System.out.println("Draw");
